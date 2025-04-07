@@ -2,7 +2,8 @@
 import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
 import { useState } from "react";
 import { DOMParser as Dom } from "xmldom";
-import * as toGeoJSON from "@tmcw/togeojson"; // ✅ correct
+import * as toGeoJSON from "@tmcw/togeojson";
+import { FaFolderOpen } from "react-icons/fa";
 
 import "leaflet/dist/leaflet.css";
 
@@ -32,15 +33,6 @@ const MapUploaderKML = () => {
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-2">Upload a KML file</h2>
-      <input
-        type="file"
-        accept=".kml"
-        onChange={handleFileUpload}
-        className="mb-4"
-      />
-
-      {/* Wrapper for centering */}
       <div
         style={{
           display: "flex",
@@ -54,9 +46,27 @@ const MapUploaderKML = () => {
           zoom={2}
           style={{
             height: "500px",
-            width: "800px", // or 100% if you want full width
+            width: "800px",
           }}
         >
+          <label
+            style={{
+              zIndex: 1000,
+              position: "absolute",
+              top: 75,
+              left: 10,
+              cursor: "pointer",
+              marginLeft: "5px",
+            }}
+          >
+            <FaFolderOpen size={30} color="#333" />
+            <input
+              type="file"
+              accept=".kml"
+              onChange={handleFileUpload}
+              style={{ display: "none" }}
+            />
+          </label>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution="&copy; OpenStreetMap contributors"
