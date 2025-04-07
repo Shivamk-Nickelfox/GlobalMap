@@ -1,4 +1,3 @@
-// MapUploaderKML.jsx
 import { MapContainer, TileLayer, GeoJSON } from "react-leaflet";
 import { useState } from "react";
 import { DOMParser as Dom } from "xmldom";
@@ -45,8 +44,8 @@ const MapUploaderKML = () => {
           center={[20, 0]}
           zoom={2}
           style={{
-            height: "500px",
-            width: "800px",
+            height: "900px",
+            width: "1000px",
           }}
         >
           <label
