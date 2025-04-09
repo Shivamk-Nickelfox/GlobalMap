@@ -1,4 +1,4 @@
-// src/hooks/useResponsive.js
+
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 

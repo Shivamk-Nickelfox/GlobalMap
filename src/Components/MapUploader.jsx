@@ -79,7 +79,7 @@ const MapUploaderKML = () => {
   };
   const handleClearData = async () => {
     await clearGeoData();
-    window.location.reload(); // refresh the page
+    window.location.reload();
   };
 
   return (
@@ -91,7 +91,7 @@ const MapUploaderKML = () => {
       mt={4}
     >
       <Box sx={{ ...containerBox }}>
-        {/* Upload icon inside map */}
+        
         {!fileUploaded && (
           <IconButton component="label" sx={iconButtonBase()}>
             <FaFolderOpen size={24} color="#0000FF" />
@@ -104,13 +104,13 @@ const MapUploaderKML = () => {
           </IconButton>
         )}
 
-        {/* Clear Data button outside the map */}
+        
         {fileUploaded && (
           <Box sx={iconButtonBase()}>
             <button
               onClick={handleClearData}
               style={{
-                backgroundColor: "#f44336",
+                backgroundColor: "#0000FFFF",
                 color: "#fff",
                 border: "none",
                 padding: "6px 12px",
@@ -119,12 +119,12 @@ const MapUploaderKML = () => {
                 fontSize: "14px",
               }}
             >
-              Clear Data
+              CD
             </button>
           </Box>
         )}
 
-        {/* Map goes here */}
+        
         <MapContainer
           center={[20, 0]}
           zoom={2}
