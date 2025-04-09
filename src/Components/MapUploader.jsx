@@ -11,7 +11,7 @@ import * as toGeoJSON from "@tmcw/togeojson";
 import { FaFolderOpen } from "react-icons/fa";
 import { Box, IconButton } from "@mui/material";
 import useResponsive from "../Hooks/Responsive";
-import { containerBox, iconButtonBase } from "../Styles/MapStyling";
+import { containerBox, iconButtonBase, headerBox } from "../Styles/MapStyling";
 import { getGeoData, saveGeoData, clearGeoData } from "../IndexedDB/Db";
 import "leaflet/dist/leaflet.css";
 
@@ -80,18 +80,20 @@ const MapUploaderKML = () => {
   const handleClearData = async () => {
     await clearGeoData();
     window.location.reload();
+    setFileUploaded(false);
   };
 
   return (
     <Box
       display="flex"
+      flexDirection={"column"}
       justifyContent="center"
       alignItems="center"
       width="100%"
       mt={4}
     >
+      <Box sx={headerBox}>Map</Box>
       <Box sx={{ ...containerBox }}>
-        
         {!fileUploaded && (
           <IconButton component="label" sx={iconButtonBase()}>
             <FaFolderOpen size={24} color="#0000FF" />
@@ -104,7 +106,6 @@ const MapUploaderKML = () => {
           </IconButton>
         )}
 
-        
         {fileUploaded && (
           <Box sx={iconButtonBase()}>
             <button
@@ -124,7 +125,6 @@ const MapUploaderKML = () => {
           </Box>
         )}
 
-        
         <MapContainer
           center={[20, 0]}
           zoom={2}

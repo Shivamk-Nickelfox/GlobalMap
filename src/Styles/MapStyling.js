@@ -14,6 +14,18 @@ const containerBox = {
   position: "relative",
 };
 
+const headerBox = {
+  fontWeight: "bold",
+      zIndex: 100,
+      fontSize: {
+        xs: "16px",
+        sm: "20px",
+        md: "24px",
+        lg: "28px",
+      },
+      mb: 2,
+}
+
 const iconButtonBase = (marginLeftValue) => ({
   position: "absolute",
   top: 78,
@@ -24,4 +36,4 @@ const iconButtonBase = (marginLeftValue) => ({
   "&:hover": { backgroundColor: "#f0f0f0" },
 });
 
-export { containerBox, iconButtonBase };
+export { containerBox, iconButtonBase,headerBox };
